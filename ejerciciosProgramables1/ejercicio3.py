@@ -1,3 +1,5 @@
+
+
 """l equipo de fútbol nacional Las Tuercas F.C. cuenta con 25 jugadores en su planilla, cada uno de
 ellos recibe un salario mensual diferente y el equipo paga los salarios
 en efectivo. Por lo que le ha solicitado desarrollar un programa que reciba el salario de cada uno
@@ -28,17 +30,30 @@ def calculador_denominaciones(lista_salarios, lista_jugador):
 
         billetes_veinte = salario_por_pagar // 20
         residuo_billetes_veinte = salario_por_pagar % 20
+        total_billetes_veinte += billetes_veinte
+
         if residuo_billetes_veinte != 0:
             billetes_diez = residuo_billetes_veinte // 10
             residuo_billetes_diez = residuo_billetes_veinte % 10
+            total_billetes_diez += billetes_diez 
+
             if residuo_billetes_diez != 0:
                 billetes_cinco = residuo_billetes_diez // 5
                 residuo_billetes_cinco = residuo_billetes_diez % 5
+                total_billetes_cinco += billetes_cinco
+
                 if residuo_billetes_cinco != 0:
                     billetes_dos = residuo_billetes_cinco // 2
                     residuo_billetes_dos = residuo_billetes_cinco % 2
+                    total_billetes_dos += billetes_dos
+
                     if residuo_billetes_dos != 0:
-                        billetes_uno = billetes_dos // 1
+                        billetes_uno = residuo_billetes_dos // 1
                         residuo_billetes_uno = residuo_billetes_dos % 1
-        lista
-        print ("El jugador:" + lista_jugador + " tiene un salario de " + lista_salarios + "")
+                        total_billetes_uno += billetes_uno
+
+        print ("El jugador:" + lista_jugador + " tiene un salario de " + lista_salarios)
+        print ("Dividido entre: \n " + total_billetes_veinte + " Billetes de 20\n " + total_billetes_diez + " Billetes de 10\n " + total_billetes_cinco + " Billetes de 5")
+        
+        
+        
